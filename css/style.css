@@ -1,0 +1,14 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+header {
+    text-align: center;
+}
+.filters, .metrics, .chart, .images {
+    margin: 20px 0;
+}
+.metric {
+    margin: 10px 0;
+}

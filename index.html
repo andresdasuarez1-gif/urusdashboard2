@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sales Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Sales Dashboard</h1>
+    </header>
+    <section class="filters">
+        <label for="producer">Producer:</label>
+        <select id="producer"><option>All</option></select>
+        <label for="company">Company:</label>
+        <select id="company"><option>All</option></select>
+        <label for="location">Location:</label>
+        <select id="location"><option>All</option></select>
+        <label for="date">Date Range:</label>
+        <input type="date" id="start"> to <input type="date" id="end">
+    </section>
+    <section class="metrics">
+        <div class="metric">Total Leads: <span id="leads">0</span></div>
+        <div class="metric">Quotes Sent: <span id="quotes">0</span></div>
+        <div class="metric">Policies Sold: <span id="policies">0</span></div>
+    </section>
+    <section class="chart">
+        <h2>Quote Pacing</h2>
+        <canvas id="quoteChart" width="600" height="300"></canvas>
+    </section>
+    <section class="images">
+        <h2>Dashboard Visuals</h2>
+        <img src="assets/UploadedImage0.jpg" alt="Dashboard Image 0" width="300">
+        <img src="assets/UploadedImage1.jpg" alt="Dashboard Image 1" width="300">
+        <img src="assets/UploadedImage2.jpg" alt="Dashboard Image 2" width="300">
+    </section>
+    <script src="js/script.js"></script>
+</body>
+</html>
