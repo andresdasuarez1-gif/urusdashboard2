@@ -2,39 +2,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sales Dashboard</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sales Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <header>
-        <h1>Sales Dashboard</h1>
-    </header>
-    <section class="filters">
-        <label for="producer">Producer:</label>
-        <select id="producer"><option>All</option></select>
-        <label for="company">Company:</label>
-        <select id="company"><option>All</option></select>
-        <label for="location">Location:</label>
-        <select id="location"><option>All</option></select>
-        <label for="date">Date Range:</label>
-        <input type="date" id="start"> to <input type="date" id="end">
-    </section>
-    <section class="metrics">
-        <div class="metric">Total Leads: <span id="leads">0</span></div>
-        <div class="metric">Quotes Sent: <span id="quotes">0</span></div>
-        <div class="metric">Policies Sold: <span id="policies">0</span></div>
-    </section>
-    <section class="chart">
-        <h2>Quote Pacing</h2>
-        <canvas id="quoteChart" width="600" height="300"></canvas>
-    </section>
-    <section class="images">
-        <h2>Dashboard Visuals</h2>
-        <img src="assets/UploadedImage0.jpg" alt="Dashboard Image 0" width="300">
-        <img src="assets/UploadedImage1.jpg" alt="Dashboard Image 1" width="300">
-        <img src="assets/UploadedImage2.jpg" alt="Dashboard Image 2" width="300">
-    </section>
-    <script src="js/script.js"></script>
+  <header>
+    <h1>Sales Dashboard</h1>
+  </header>
+
+  <section id="filters">
+    <h2>Filters</h2>
+    <label>Producer: <input type="text" /></label>
+    <label>Company: <input type="text" /></label>
+    <label>Location: <input type="text" /></label>
+    <label>Date Range: <input type="date" /> to <input type="date" /></label>
+  </section>
+
+  <section id="metrics">
+    <h2>Metrics</h2>
+    <div>Leads: <span id="leads">0</span></div>
+    <div>Quotes: <span id="quotes">0</span></div>
+    <div>Policies: <span id="policies">0</span></div>
+  </section>
+
+  <section id="charts">
+    <h2>Charts</h2>
+    <canvas id="quoteChart" width="400" height="200"></canvas>
+    <canvas id="conversionChart" width="400" height="200"></canvas>
+  </section>
+
+  <section id="manual-entry">
+    <h2>Manual Entry</h2>
+    <form>
+      <label>Producer: <input type="text" /></label>
+      <label>Quotes: <input type="number" /></label>
+      <label>Policies: <input type="number" /></label>
+      <label>Goal: <input type="number" /></label>
+      <label>Reviewed: <input type="checkbox" /></label>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section id="projections">
+    <h2>Projections</h2>
+    <label>Current Policies: <input type="number" id="currentPolicies" /></label>
+    <label>Growth Rate (%): <input type="number" id="growthRate" /></label>
+    <button onclick="calculateProjection()">Calculate</button>
+    <div id="projectionResult"></div>
+  </section>
+
+  <section id="lead-tracker">
+    <h2>Lead Tracker</h2>
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Status</th><th>Reviewed</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>John Doe</td><td>Contacted</td><td><input type="checkbox" /></td></tr>
+        <tr><td>Jane Smith</td><td>Quoted</td><td><input type="checkbox" /></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="upload-section">
+    <h2>Upload Data</h2>
+    <form id="uploadForm">
+      <input type="file" id="fileInput" accept=".csv, .xlsx" required>
+      <button type="submit">Upload</button>
+    </form>
+    <div id="uploadStatus"></div>
+    <table id="previewTable">
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="gallery">
+    <h2>Image Gallery</h2>
+    <img src="assets/UploadedImage0.jpg" alt="Image 0" width="200"/>
+    <img src="assets/UploadedImage1.jpg" alt="Image 1" width="200"/>
+    <img src="assets/UploadedImage2.jpg" alt="Image 2" width="200"/>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
